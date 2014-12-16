@@ -40,7 +40,7 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   # inverse getter
   getInverse <- function(...) {
-    if (is.null(x)) {
+    if (all(is.na(x))) {
       return(NULL)            # no matrix implies no inverse 
     } else if (is.null(invX)) {
       message("... computing inverse ...")
